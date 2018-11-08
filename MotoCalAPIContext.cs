@@ -34,6 +34,9 @@ namespace MotoCalAPI
           new Series { Id = -4, Name = "Indy Car" },
           new Series { Id = -5, Name = "MotoGP" }
       );
+      modelBuilder.Entity<Event>().HasData(
+          new Event { SeriesId = -1, Type = "Free Practice 1", Title = "Australian GP", DateTime = new DateTime(2000, 12, 16, 01, 00) }
+      )
     }
   }
 }
