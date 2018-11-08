@@ -1,0 +1,14 @@
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/bin/Debug/netcoreapp2.1/MotoCalAPI.deps.json
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/bin/Debug/netcoreapp2.1/MotoCalAPI.runtimeconfig.json
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/bin/Debug/netcoreapp2.1/MotoCalAPI.runtimeconfig.dev.json
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/bin/Debug/netcoreapp2.1/MotoCalAPI.dll
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/bin/Debug/netcoreapp2.1/MotoCalAPI.pdb
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/Debug/netcoreapp2.1/MotoCalAPI.csprojAssemblyReference.cache
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/Debug/netcoreapp2.1/MotoCalAPI.csproj.CoreCompileInputs.cache
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/Debug/netcoreapp2.1/MotoCalAPI.RazorAssemblyInfo.cache
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/Debug/netcoreapp2.1/MotoCalAPI.RazorAssemblyInfo.cs
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/Debug/netcoreapp2.1/MotoCalAPI.AssemblyInfoInputs.cache
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/Debug/netcoreapp2.1/MotoCalAPI.AssemblyInfo.cs
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/Debug/netcoreapp2.1/MotoCalAPI.RazorTargetAssemblyInfo.cache
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/Debug/netcoreapp2.1/MotoCalAPI.dll
+/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/Debug/netcoreapp2.1/MotoCalAPI.pdb
