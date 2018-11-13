@@ -19,5 +19,12 @@ namespace MotoCalAPI.Controllers
 
       return Ok(db.Events.Include(i => i.Series));
     }
+    [HttpGet("{id}")]
+    public ActionResult GetEventsBySeries([FromRoute] int id)
+    {
+      var db = new MotoCalAPIContext();
+      return Ok(db.Events
+      .Include(i => i.Series).Where(w => w.SeriesId == id));
+    }
   }
 }
