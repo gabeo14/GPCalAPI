@@ -12,7 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 
-namespace MotoCalAPI
+namespace GPCalAPI
 {
   public class Startup
   {
@@ -26,6 +26,7 @@ namespace MotoCalAPI
     // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
+      services.AddCors();
       services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1).AddJsonOptions(options =>
     {
       options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -43,6 +44,15 @@ namespace MotoCalAPI
       {
         app.UseHsts();
       }
+
+      app.UseCors(builder =>
+                     builder
+                         .AllowAnyOrigin()
+                         .AllowAnyMethod()
+                         .AllowAnyHeader()
+                         .AllowCredentials());
+      app.UseHttpsRedirection();
+      app.UseMvc();
 
       app.UseHttpsRedirection();
       app.UseMvc();

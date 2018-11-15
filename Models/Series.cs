@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace MotoCalAPI.Models
+namespace GPCalAPI.Models
 {
   public class Series
   {

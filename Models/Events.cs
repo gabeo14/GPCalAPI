@@ -1,6 +1,6 @@
 using System;
 
-namespace MotoCalAPI.Models
+namespace GPCalAPI.Models
 {
   public class Event
   {

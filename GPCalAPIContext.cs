@@ -1,17 +1,17 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
-using MotoCalAPI.Models;
+using GPCalAPI.Models;
 
-namespace MotoCalAPI
+namespace GPCalAPI
 {
-  public partial class MotoCalAPIContext : DbContext
+  public partial class GPCalAPIContext : DbContext
   {
-    public MotoCalAPIContext()
+    public GPCalAPIContext()
     {
     }
 
-    public MotoCalAPIContext(DbContextOptions<MotoCalAPIContext> options)
+    public GPCalAPIContext(DbContextOptions<GPCalAPIContext> options)
         : base(options)
     {
     }

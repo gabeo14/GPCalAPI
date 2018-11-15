@@ -11592,21 +11592,15 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/MotoCalAPI.csproj",
-      "projectName": "MotoCalAPI",
-      "projectPath": "/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/MotoCalAPI.csproj",
+      "projectUniqueName": "/Users/gabeo14/sdg/unit-3/GPCalApp/GPCalAPI/GPCalAPI.csproj",
+      "projectName": "GPCalAPI",
+      "projectPath": "/Users/gabeo14/sdg/unit-3/GPCalApp/GPCalAPI/GPCalAPI.csproj",
       "packagesPath": "/Users/gabeo14/.nuget/packages/",
-      "outputPath": "/Users/gabeo14/sdg/unit-3/MotoCalApp/MotoCalAPI/obj/",
+      "outputPath": "/Users/gabeo14/sdg/unit-3/GPCalApp/GPCalAPI/obj/",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
-      ],
-      "configFilePaths": [
-        "/Users/gabeo14/.nuget/NuGet/NuGet.Config"
-      ],
-      "originalTargetFrameworks": [
-        "netcoreapp2.1"
-      ],
+      "fallbackFolders": ["/usr/local/share/dotnet/sdk/NuGetFallbackFolder"],
+      "configFilePaths": ["/Users/gabeo14/.nuget/NuGet/NuGet.Config"],
+      "originalTargetFrameworks": ["netcoreapp2.1"],
       "sources": {
         "https://api.nuget.org/v3/index.json": {}
       },
@@ -11616,9 +11610,7 @@
         }
       },
       "warningProperties": {
-        "warnAsError": [
-          "NU1605"
-        ]
+        "warnAsError": ["NU1605"]
       }
     },
     "frameworks": {
@@ -11649,9 +11641,7 @@
             "version": "[2.1.2, )"
           }
         },
-        "imports": [
-          "net461"
-        ],
+        "imports": ["net461"],
         "assetTargetFallback": true,
         "warn": true
       }

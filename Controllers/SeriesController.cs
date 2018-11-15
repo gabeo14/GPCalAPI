@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MotoCalAPI.Models;
+using GPCalAPI.Models;
 
-namespace MotoCalAPI.Controllers
+namespace GPCalAPI.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
@@ -15,7 +15,7 @@ namespace MotoCalAPI.Controllers
     [HttpGet]
     public ActionResult GetSeries()
     {
-      var db = new MotoCalAPIContext();
+      var db = new GPCalAPIContext();
       return Ok(db.Series);
     }
   }

@@ -4,7 +4,12 @@
     "signature": "1aa0a198cb6124caa07fea5b958397c697267789"
   },
   "compilationOptions": {
-    "defines": ["TRACE", "DEBUG", "NETCOREAPP", "NETCOREAPP2_1"],
+    "defines": [
+      "TRACE",
+      "DEBUG",
+      "NETCOREAPP",
+      "NETCOREAPP2_1"
+    ],
     "languageVersion": "",
     "platform": "",
     "allowUnsafe": false,

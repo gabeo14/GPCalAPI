@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using MotoCalAPI.Models;
+using GPCalAPI.Models;
 
-namespace MotoCalAPI.Controllers
+namespace GPCalAPI.Controllers
 {
   [Route("api/[controller]")]
   [ApiController]
@@ -15,14 +15,14 @@ namespace MotoCalAPI.Controllers
     [HttpGet]
     public ActionResult GetEvents()
     {
-      var db = new MotoCalAPIContext();
+      var db = new GPCalAPIContext();
 
       return Ok(db.Events.Include(i => i.Series));
     }
     [HttpGet("{id}")]
     public ActionResult GetEventsBySeries([FromRoute] int id)
     {
-      var db = new MotoCalAPIContext();
+      var db = new GPCalAPIContext();
       return Ok(db.Events
       .Include(i => i.Series).Where(w => w.SeriesId == id));
     }
