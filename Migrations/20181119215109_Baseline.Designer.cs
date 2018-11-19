@@ -10,8 +10,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace GPCalAPI.Migrations
 {
     [DbContext(typeof(GPCalAPIContext))]
-    [Migration("20181115193043_ChangedNamesAndStuff")]
-    partial class ChangedNamesAndStuff
+    [Migration("20181119215109_Baseline")]
+    partial class Baseline
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -107,7 +107,31 @@ namespace GPCalAPI.Migrations
                     );
                 });
 
+            modelBuilder.Entity("GPCalAPI.Models.UserPref", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("SeriesId");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("SeriesId");
+
+                    b.ToTable("UserPref");
+                });
+
             modelBuilder.Entity("GPCalAPI.Models.Event", b =>
+                {
+                    b.HasOne("GPCalAPI.Models.Series", "Series")
+                        .WithMany()
+                        .HasForeignKey("SeriesId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("GPCalAPI.Models.UserPref", b =>
                 {
                     b.HasOne("GPCalAPI.Models.Series", "Series")
                         .WithMany()

@@ -22,7 +22,8 @@ namespace GPCalAPI.Controllers
       var userId = User.Claims.First(f => f.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
       followed.UserId = userId;
       db.UserPref.Add(followed);
-      return Ok();
+      db.SaveChanges();
+      return Ok(followed);
 
     }
   }

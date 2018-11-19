@@ -116,10 +116,20 @@ namespace GPCalAPI.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("SeriesId");
+
                     b.ToTable("UserPref");
                 });
 
             modelBuilder.Entity("GPCalAPI.Models.Event", b =>
+                {
+                    b.HasOne("GPCalAPI.Models.Series", "Series")
+                        .WithMany()
+                        .HasForeignKey("SeriesId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("GPCalAPI.Models.UserPref", b =>
                 {
                     b.HasOne("GPCalAPI.Models.Series", "Series")
                         .WithMany()

@@ -83,7 +83,7 @@ namespace GPCalAPI
 
       );
 
-      modelBuilder.Entity<UserPref>().HasData();
+
     }
 
     public DbSet<Series> Series { get; set; }

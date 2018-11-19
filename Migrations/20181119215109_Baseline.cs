@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace GPCalAPI.Migrations
 {
-    public partial class ChangedNamesAndStuff : Migration
+    public partial class Baseline : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -37,6 +37,26 @@ namespace GPCalAPI.Migrations
                     table.PrimaryKey("PK_Events", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Events_Series_SeriesId",
+                        column: x => x.SeriesId,
+                        principalTable: "Series",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserPref",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn),
+                    UserId = table.Column<string>(nullable: true),
+                    SeriesId = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserPref", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_UserPref_Series_SeriesId",
                         column: x => x.SeriesId,
                         principalTable: "Series",
                         principalColumn: "Id",
@@ -109,12 +129,20 @@ namespace GPCalAPI.Migrations
                 name: "IX_Events_SeriesId",
                 table: "Events",
                 column: "SeriesId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserPref_SeriesId",
+                table: "UserPref",
+                column: "SeriesId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
                 name: "Events");
+
+            migrationBuilder.DropTable(
+                name: "UserPref");
 
             migrationBuilder.DropTable(
                 name: "Series");
