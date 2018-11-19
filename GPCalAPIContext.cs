@@ -82,9 +82,13 @@ namespace GPCalAPI
 
 
       );
+
+      modelBuilder.Entity<UserPref>().HasData();
     }
 
     public DbSet<Series> Series { get; set; }
     public DbSet<Event> Events { get; set; }
+
+    public DbSet<UserPref> UserPref { get; set; }
   }
 }

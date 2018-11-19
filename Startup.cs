@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +32,17 @@ namespace GPCalAPI
     {
       options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
     }); ;
+
+      services.AddAuthentication(options =>
+              {
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+
+              }).AddJwtBearer(options =>
+              {
+                options.Authority = "https://gabeo14.auth0.com/";
+                options.Audience = "https://gpcal.api";
+              });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,9 +63,7 @@ namespace GPCalAPI
                          .AllowAnyMethod()
                          .AllowAnyHeader()
                          .AllowCredentials());
-      app.UseHttpsRedirection();
-      app.UseMvc();
-
+      app.UseAuthentication();
       app.UseHttpsRedirection();
       app.UseMvc();
     }
