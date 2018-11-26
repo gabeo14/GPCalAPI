@@ -9,5 +9,8 @@ namespace GPCalAPI.Models
     public int SeriesId { get; set; }
 
     public Series Series { get; set; }
+
+    // public int EventId { get; set; }
+    // public Event Event { get; set; }
   }
 }

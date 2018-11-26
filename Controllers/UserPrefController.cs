@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GPCalAPI.Models;
+using GPCalAPI.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 
 
@@ -43,8 +44,29 @@ namespace GPCalAPI.Controllers
     {
       var db = new GPCalAPIContext();
       var userId = User.Claims.First(f => f.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
-      return Ok(db.UserPref
-      .Include(i => i.Series).Where(w => w.UserId == userId));
+
+      var userSeriesId = db.UserPref
+                .Include(i => i.Series)
+                .Where(w => w.UserId == userId)
+                .Select(s => s.SeriesId);
+
+      var rv = db.Events
+      .Include(i => i.Series)
+        .Where(w => userSeriesId.Any(a => a == w.SeriesId))
+        .OrderBy(o => o.DateAndTime)
+        .Select(s => new UserSeries(s, s.Series));
+
+      return Ok(rv);
+
+      // return Ok(db.UserPref
+      //           .Include(i => i.Series)
+      //           .Include(i => i.Series.Events)
+      //           .Where(w => w.UserId == userId)
+      //           .ToList()
+      //           .SelectMany(s => s.Series.Events.Select(ent => new UserSeries(ent, s.Series))));
+
+
+      //.OrderBy(o => o.EventTime));
     }
   }
 }

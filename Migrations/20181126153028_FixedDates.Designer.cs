@@ -3,15 +3,17 @@ using System;
 using GPCalAPI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace GPCalAPI.Migrations
 {
     [DbContext(typeof(GPCalAPIContext))]
-    partial class GPCalAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20181126153028_FixedDates")]
+    partial class FixedDates
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

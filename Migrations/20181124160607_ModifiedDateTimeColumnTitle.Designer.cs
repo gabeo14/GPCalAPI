@@ -3,15 +3,17 @@ using System;
 using GPCalAPI;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace GPCalAPI.Migrations
 {
     [DbContext(typeof(GPCalAPIContext))]
-    partial class GPCalAPIContextModelSnapshot : ModelSnapshot
+    [Migration("20181124160607_ModifiedDateTimeColumnTitle")]
+    partial class ModifiedDateTimeColumnTitle
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -40,12 +42,12 @@ namespace GPCalAPI.Migrations
 
                     b.HasData(
                         new { Id = -1, DateAndTime = new DateTime(2018, 3, 23, 1, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Australian GP", Type = "Free Practice 1" },
-                        new { Id = -2, DateAndTime = new DateTime(2018, 3, 23, 5, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Australian GP", Type = "Free Practice 2" },
-                        new { Id = -3, DateAndTime = new DateTime(2018, 3, 24, 3, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Australian GP", Type = "Free Practice 3" },
-                        new { Id = -4, DateAndTime = new DateTime(2018, 3, 24, 6, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Australian GP", Type = "Qualifying" },
-                        new { Id = -5, DateAndTime = new DateTime(2018, 3, 25, 5, 10, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Australian GP", Type = "Race" },
-                        new { Id = -6, DateAndTime = new DateTime(2018, 4, 6, 11, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Bahrain GP", Type = "Free Practice 1" },
-                        new { Id = -7, DateAndTime = new DateTime(2018, 4, 6, 15, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Bahrain GP", Type = "Free Practice 2" },
+                        new { Id = -2, DateAndTime = new DateTime(2019, 3, 23, 5, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Australian GP", Type = "Free Practice 2" },
+                        new { Id = -3, DateAndTime = new DateTime(2019, 3, 24, 3, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Australian GP", Type = "Free Practice 3" },
+                        new { Id = -4, DateAndTime = new DateTime(2019, 3, 24, 6, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Australian GP", Type = "Qualifying" },
+                        new { Id = -5, DateAndTime = new DateTime(2019, 3, 25, 5, 10, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Australian GP", Type = "Race" },
+                        new { Id = -6, DateAndTime = new DateTime(2019, 4, 6, 11, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Bahrain GP", Type = "Free Practice 1" },
+                        new { Id = -7, DateAndTime = new DateTime(201, 4, 6, 15, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Bahrain GP", Type = "Free Practice 2" },
                         new { Id = -8, DateAndTime = new DateTime(2018, 4, 7, 12, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Bahrain GP", Type = "Free Practice 3" },
                         new { Id = -9, DateAndTime = new DateTime(2018, 4, 7, 15, 0, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Bahrain GP", Type = "Qualifying" },
                         new { Id = -10, DateAndTime = new DateTime(2018, 4, 8, 15, 10, 0, 0, DateTimeKind.Unspecified), SeriesId = -1, Title = "Bahrain GP", Type = "Race" },
@@ -132,7 +134,7 @@ namespace GPCalAPI.Migrations
             modelBuilder.Entity("GPCalAPI.Models.UserPref", b =>
                 {
                     b.HasOne("GPCalAPI.Models.Series", "Series")
-                        .WithMany("UserPrefs")
+                        .WithMany()
                         .HasForeignKey("SeriesId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
