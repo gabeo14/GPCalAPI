@@ -68,5 +68,15 @@ namespace GPCalAPI.Controllers
 
       //.OrderBy(o => o.EventTime));
     }
+
+    [HttpGet("series")]
+    public ActionResult GetSeriesByUser()
+    {
+      var db = new GPCalAPIContext();
+      var userId = User.Claims.First(f => f.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier").Value;
+      return Ok(db.UserPref
+                .Where(w => w.UserId == userId)
+      );
+    }
   }
 }
